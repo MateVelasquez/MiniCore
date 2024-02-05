@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promedio de Notas por Alumno y Progreso</title>
+</head>
+<body>
+    <h1>Promedio de Notas por Alumno y Progreso</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre del Alumno</th>
+                <th>P1 Promedio Calculado por el 25%</th>
+                <th>P2 Promedio Calculado por el 35%</th>
+                <th>P3 Promedio Calculado por el 40%</th>
+                <th>Promedio Necesario Para aprobar la materia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos %}
+                <tr>
+                    <td>{{ alumno.nombre }}</td>
+                    <td>{{ '%0.2f' | format(alumno.promedios.get('P1', 0)) }}</td>
+                    <td>{{ '%0.2f' | format(alumno.promedios.get('P2', 0)) }}</td>
+                    <td>{{ '%0.2f' | format(alumno.promedios.get('P3', 0)) }}</td>
+                    <td>{{ '%0.2f' | format(alumno.calculo_extra) if alumno.calculo_extra is not none else 'N/A' }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">No hay datos disponibles para mostrar.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

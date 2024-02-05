@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Cantidad de Notas</title>
+</head>
+<body>
+    <h2>Registrar Cantidad de Notas</h2>
+
+    <h3>Los progresos tienen las fechas establecidas de la siguiente manera</h3>
+    <h3>Progreso 1 Fecha Inicio: 25 de septiembre de 2023 / Fecha Fin: 18 de octubre de 2023</h3>
+    <h3>Progreso 1 Fecha Inicio: 19 de octubre de 2023 / Fecha Fin: 8 de enero de 2024</h3>
+    <h3>Progreso 1 Fecha Inicio: 09 de enero de 2024 / Fecha Fin: 8 de febrero de 2024</h3>
+
+    <form method="post" action="/cantidad_notas">
+        <label for="cantidadNotasP1">Cantidad de Notas P1:</label>
+        <input type="number" name="cantidadNotasP1" required>
+    
+        <label for="cantidadNotasP2">Cantidad de Notas P2:</label>
+        <input type="number" name="cantidadNotasP2" required>
+    
+        <label for="cantidadNotasP3">Cantidad de Notas P3:</label>
+        <input type="number" name="cantidadNotasP3" required>
+        
+        
+
+        <form action="/insert_notas" method="get">
+            <button type="submit">Registrar las cantidad de las notas</button>
+        </form>
+    </form>
+</body>
+</html>
