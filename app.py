@@ -247,7 +247,7 @@ def promedio_notas():
     # Realizar el cálculo extra para cada alumno
     for id, info in alumnos.items():
         if 'P1' in info['promedios'] and 'P2' in info['promedios']:
-            info['calculo_extra'] = 6 - (info['promedios']['P1'] - info['promedios']['P2'])
+            info['calculo_extra'] = 6 - info['promedios']['P1'] - info['promedios']['P2']
 
     cursor.close()
     conn.close()
